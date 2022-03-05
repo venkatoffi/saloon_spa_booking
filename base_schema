@@ -1,0 +1,24 @@
+Company
+  name
+  GSTIN
+  PAN number
+  Address
+  Work schedule (days and hours of operation)
+  Number of chairs 
+
+Services
+  company_id
+  name
+  duration
+  price
+
+Customer
+  name
+  email
+
+Booking
+  company_id
+  customer_id
+  booked_datetime
+  services
+
