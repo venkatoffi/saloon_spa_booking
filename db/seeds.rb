@@ -26,10 +26,22 @@ companies.each do |company|
   Company.find_or_create_by(company)
 end
 
+services = [
+  {name: "Hair Cut", company_id: 1, duration: 30, price: 100},
+  {name: "Shaving", company_id: 1, duration: 20, price: 50},
+  {name: "Facial", company_id: 1, duration: 60, price: 150},
+  {name: "Hair Cut", company_id: 2, duration: 20, price: 200},
+  {name: "Shaving", company_id: 2, duration: 10, price: 100},
+  {name: "Facial", company_id: 2, duration: 90, price: 300},
+  {name: "Hair Cut", company_id: 3, duration: 60, price: 300},
+  {name: "Shaving", company_id: 3, duration: 30, price: 250},
+  {name: "Facial", company_id: 3, duration: 70, price: 1000}
+]
 
 
-
-
+services.each do |service|
+  Service.find_or_create_by(service)
+end
 
 
 

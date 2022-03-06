@@ -18,4 +18,10 @@ Rails.application.routes.draw do
       get "get_all_companies_customers", to: "customers#index"
     end
   end
+
+  # Customer Services
+  resources :services
+
+  # Customer Bookings
+  resources :bookings
 end
