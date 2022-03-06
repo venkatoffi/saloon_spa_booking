@@ -11,8 +11,9 @@ customers = [
   {name: 'Balaji', email: 'balaji@gmail.com'},
   {name: 'Test Customer 1', email: 'test_customer_1@gmail.com'}
 ]
-Customer.create!(customers)
-
+customers.each do |customer|
+  Customer.find_or_create_by(customer)
+end
 default_working_hours = {"Monday":{ "type": "open","timing": [{"end": "10:00 AM", "start": "6:00 PM"}]}, "Tuesday":{ "type": "open","timing": [{"end": "10:00 AM", "start": "6:00 PM"}]}, "Wednesday":{ "type": "open","timing": [{"end": "10:00 AM", "start": "6:00 PM"}]}, "Thursday":{ "type": "open","timing": [{"end": "10:00 AM", "start": "6:00 PM"}]}, "Friday":{ "type": "open","timing": [{"end": "10:00 AM", "start": "6:00 PM"}]}, "Saturday":{ "type": "closed","timing": []}, "Sunday":{ "type": "closed","timing": []}}
 
 companies = [
@@ -22,7 +23,7 @@ companies = [
 ]
 
 companies.each do |company|
-  Company.create!(company)
+  Company.find_or_create_by(company)
 end
 
 

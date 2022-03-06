@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_05_040028) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_06_114718) do
   create_table "bookings", force: :cascade do |t|
     t.integer "company_id", null: false
     t.integer "customer_id", null: false
@@ -24,8 +24,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_05_040028) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "gst_in", null: false
-    t.integer "pan", null: false
+    t.string "gst_in", null: false
+    t.string "pan", null: false
     t.string "address"
     t.integer "chairs"
     t.json "working_hours"
