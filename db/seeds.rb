@@ -17,9 +17,9 @@ end
 default_working_hours = {"Monday":{ "type": "open","timing": [{"end": "10:00 AM", "start": "6:00 PM"}]}, "Tuesday":{ "type": "open","timing": [{"end": "10:00 AM", "start": "6:00 PM"}]}, "Wednesday":{ "type": "open","timing": [{"end": "10:00 AM", "start": "6:00 PM"}]}, "Thursday":{ "type": "open","timing": [{"end": "10:00 AM", "start": "6:00 PM"}]}, "Friday":{ "type": "open","timing": [{"end": "10:00 AM", "start": "6:00 PM"}]}, "Saturday":{ "type": "closed","timing": []}, "Sunday":{ "type": "closed","timing": []}}
 
 companies = [
-  { name:'Cut & Smile', gst_in: 123, pan: 456, address: 'No: 11, New Street, T.nagar, Chennai-600017', chairs: 5, working_hours: default_working_hours },
-  { name: 'New Look', gst_in: 789, pan: 122, address:'Plot: 3/4 , Patel Street, West Mambalam, Chennai-600033', chairs:7, working_hours:  default_working_hours },
-  { name: 'Tony & Guy', gst_in:133, pan:144, address:'New No: 18 , Kodambakam Main Road, Kodambakam, Chennai-600024', chairs:3, working_hours: default_working_hours }
+  { name:'Cut & Smile', gst_in: "22AAAAA1000A1Z5", pan: "AAAAA1000A", address: 'No: 11, New Street, T.nagar, Chennai-600017', chairs: 5, working_hours: default_working_hours },
+  { name: 'New Look', gst_in: "22AAAAA2000A1Z5", pan: "AAAAA2000A", address:'Plot: 3/4 , Patel Street, West Mambalam, Chennai-600033', chairs:7, working_hours:  default_working_hours },
+  { name: 'Tony & Guy', gst_in: "22AAAAA3000A1Z5", pan: "AAAAA3000A", address:'New No: 18 , Kodambakam Main Road, Kodambakam, Chennai-600024', chairs:3, working_hours: default_working_hours }
 ]
 
 companies.each do |company|

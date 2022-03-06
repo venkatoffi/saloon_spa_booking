@@ -1,18 +1,20 @@
 class CompaniesController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create]
 
   def index
     company = Company.all
-    render json: {company: company }
+    render json: {count: company.count, company: company }
   end
 
   def create
-     # ["id", "name", "gst_in", "pan", "address", "chairs", "working_hours", "created_at", "updated_at"]
-     company_params
-
+    raise 'Gst Number is not valid:status:404' unless params[:gst_in][2..-4] == params[:pan]
+    company = Company.new
+    company.create_company(company_params)
+    render json: {status: :ok, message: 'Created Succcessfully', data: company }
   end
 
   private
     def company_params
-      params.require(:pan).permit(:name, :gst_in, :address, :chairs, :working_hours)
+      params.permit(:name, :gst_in, :pan, :address, :chairs, :working_hours)
     end
 end

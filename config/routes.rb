@@ -12,14 +12,10 @@ Rails.application.routes.draw do
     end
   end
 
-
   # Customer Routes
   resources :customers do
     collection do
       get "get_all_companies_customers", to: "customers#index"
     end
-    post "create_company", to: "companies#create"
   end
-
-
 end
