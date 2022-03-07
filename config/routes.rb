@@ -23,5 +23,9 @@ Rails.application.routes.draw do
   resources :services
 
   # Customer Bookings
-  resources :bookings
+  resources :bookings do
+    member do
+      get "open_booking", to: "bookings#open_booking"
+    end
+  end
 end
