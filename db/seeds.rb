@@ -43,8 +43,8 @@ services.each do |service|
   Service.find_or_create_by(service)
 end
 
-
-
-
-
-
+if Basket.all.count < 50
+  (1..50).each do |count|
+    Basket.create(capacity:  rand(2..27))
+  end
+end
