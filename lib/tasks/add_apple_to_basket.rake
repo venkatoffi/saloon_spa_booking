@@ -9,12 +9,12 @@ namespace :add_apple_to_basket do
       cut_off = false
       range.each do |rec|
         zero_or_one = Basket.limit_check(2) unless cut_off
-        capacity_check = Basket.limit_check('capacity')
+        capacity_check = Basket.limit_check('capacity') if zero_or_one.nil? or zero_or_one.count < 1
         if zero_or_one.present?
           Apple.create(variety: data[0], basket_id: zero_or_one.first.id)
         elsif capacity_check.present?
           cut_off = true
-          Apple.create(variety: data[0], basket_id:capacity_check.first.id)
+          Apple.create(variety: data[0], basket_id: capacity_check.first.id)
         else
           remaining_apples += 1
         end
